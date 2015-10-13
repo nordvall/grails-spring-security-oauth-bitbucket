@@ -1,0 +1,13 @@
+.idea
+*.iml
+
+.classpath
+.project
+
+target
+out
+web-app
+
+plugin.xml
+*.zip
+*.zip.sha1
