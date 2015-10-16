@@ -27,7 +27,7 @@ environments {
         oauth {
             providers {
                 bitbucket {
-                    api = grails.plugin.springsecurity.oauth.BitbucketApi
+                    api = org.scribe.builder.api.BitbucketApi20
                     key = 'dummy_key'
                     secret = 'dummy_secret'
                     successUri = '/oauth/bitbucket/success'
