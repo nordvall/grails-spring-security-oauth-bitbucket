@@ -2,16 +2,11 @@
 
 This plugin adds Bitbucket support to the [Grails Spring Security OAuth](https://github.com/enr/grails-spring-security-oauth) plugin.
 
-Its dependencies are [Scribe](https://github.com/fernandezpablo85/scribe-java), avaiable in Maven central and 
-[scribe-java-bitbucket](https://github.com/nordvall/scribe-java-bitbucket). The latter is currently not avaiable in any
-public Maven repository. Instead, clone https://github.com/nordvall/scribe-java-bitbucket and run "mvn install" from
-the root folder to make it available.
-
 ## Use the plugin
 To make the plugin avaiable to your Grails projects, clone this repo and run "grails maven-install" from the root folder. 
 That installs the plugin in your local Maven cache.
 
-In your Grails project, add the plugin and the major OAuth support plugin as dependencies:
+In your Grails project, add the plugin and the "mother" OAuth support plugin as dependencies:
 
 ### BuildConfig.groovy
 If you are using standard Grails dependency resolution, add these dependencies to your BuildConfig.groovy.
@@ -19,7 +14,7 @@ If you are using standard Grails dependency resolution, add these dependencies t
 ```groovy
 plugins {
         compile ':spring-security-oauth:2.1.0-SNAPSHOT'
-        compile ':spring-security-oauth-bitbucket:1.0'
+        compile ':spring-security-oauth-bitbucket:1.0.0'
 }
 ```
 
@@ -37,7 +32,7 @@ If you are using Maven based Grails project, add the dependencies in pom.xml ins
     <dependency>
         <groupId>org.grails.plugins</groupId>
         <artifactId>spring-security-oauth-bitbucket</artifactId>
-        <version>1.0</version>
+        <version>1.0.0</version>
         <scope>compile</scope>
         <type>zip</type>
     </dependency>
