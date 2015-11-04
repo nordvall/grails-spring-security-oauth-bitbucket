@@ -16,7 +16,7 @@ grails.project.dependency.resolution = {
         mavenCentral()
     }
     dependencies {
-        compile('org.scribe:scribe-java-bitbucket:1.0')
+        compile('se.mnord.scribe:scribe-java-bitbucket:1.0.0')
     }
 
     plugins {

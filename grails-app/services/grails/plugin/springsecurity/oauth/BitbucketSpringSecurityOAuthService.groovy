@@ -37,7 +37,7 @@ class BitbucketSpringSecurityOAuthService {
      * using "getBean("${providerName}SpringSecurityOAuthService")"
      *
      * @param accessToken   A Scribe {@link org.scribe.model.Token},
-     *                      obtained from {@link org.scribe.oauth.BitbucketService20}
+     *                      obtained from {@link se.mnord.scribe.oauth.BitbucketService20}
      * @return              A Spring Security authentication token:
      *                      {@link grails.plugin.springsecurity.oauth.BitbucketOAuthToken}
      */

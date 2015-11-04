@@ -7,7 +7,7 @@ def baseURL = Holders.config.grails.serverURL ?: "http://localhost:${System.getP
 oauth {
     providers {
         bitbucket {
-            api = org.scribe.builder.api.BitbucketApi20
+            api = se.mnord.scribe.builder.api.BitbucketApi20
             successUri = '/oauth/bitbucket/success'
             failureUri = '/oauth/bitbucket/failure'
             callback = "${baseURL}/oauth/bitbucket/callback"

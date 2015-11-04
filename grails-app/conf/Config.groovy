@@ -19,6 +19,14 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    environments {
+        test {
+            // The unit tests are forcing errors which causes error messages to be logged to the console
+            // We disable them during testing to avoid confusion
+            off "grails.app.services.grails.plugin.springsecurity.oauth.BitbucketSpringSecurityOAuthService"
+        }
+    }
 }
 
 // just for test, to avoid oauthService BeanCreationException "Missing oauth secret or key (or both!) in configuration for bitbucket"
@@ -27,7 +35,7 @@ environments {
         oauth {
             providers {
                 bitbucket {
-                    api = org.scribe.builder.api.BitbucketApi20
+                    api = se.mnord.scribe.builder.api.BitbucketApi20
                     key = 'dummy_key'
                     secret = 'dummy_secret'
                     successUri = '/oauth/bitbucket/success'
