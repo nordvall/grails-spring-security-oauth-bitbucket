@@ -21,7 +21,7 @@ import org.scribe.model.Token
 /**
  * Spring security authentication token. This is used during the Grails user session.
  *
- * @author Mattias Nordvall
+ * @author Mattias Nordvall <mattias@mnord.se>
  */
 class BitbucketOAuthToken extends OAuthToken {
 

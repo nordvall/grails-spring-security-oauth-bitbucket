@@ -6,8 +6,6 @@ grails.project.dependency.resolver = "maven"
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
-        // uncomment to disable ehcache
-        // excludes 'ehcache'
     }
     log "warn"
     repositories {
@@ -27,8 +25,8 @@ grails.project.dependency.resolution = {
             export = false
         }
 
-        build(":release:3.0.1",
-              ":rest-client-builder:1.0.3") {
+        build(":release:3.1.1",
+              ":rest-client-builder:2.1.1") {
             export = false
         }
     }

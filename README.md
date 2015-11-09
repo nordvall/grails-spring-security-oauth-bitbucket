@@ -1,20 +1,17 @@
-# spring-security-oauth-bitbucket
+# grails-spring-security-oauth-bitbucket
 
-This plugin adds Bitbucket support to the [Grails Spring Security OAuth](https://github.com/enr/grails-spring-security-oauth) plugin.
+This plugin adds [Bitbucket](https://bitbucket.org) support to the [Grails Spring Security OAuth](http://grails.org/plugin/spring-security-oauth) plugin.
+It makes it possible for your users to associate their Bitbucket logins to their Grails accounts.
 
-## Use the plugin
-To make the plugin avaiable to your Grails projects, clone this repo and run "grails maven-install" from the root folder. 
-That installs the plugin in your local Maven cache.
-
-In your Grails project, add the plugin and the "mother" OAuth support plugin as dependencies:
+## Usage
+Follow these instruction to install and configure the plugin.
 
 ### BuildConfig.groovy
-If you are using standard Grails dependency resolution, add these dependencies to your BuildConfig.groovy.
+If you are using standard Grails dependency resolution, add this dependency to your BuildConfig.groovy.
 
 ```groovy
 plugins {
-        compile ':spring-security-oauth:2.1.0-SNAPSHOT'
-        compile ':spring-security-oauth-bitbucket:1.0.0'
+        compile ':spring-security-oauth-bitbucket:1.0.1'
 }
 ```
 
@@ -24,22 +21,23 @@ If you are using Maven based Grails project, add the dependencies in pom.xml ins
 ```xml
     <dependency>
         <groupId>org.grails.plugins</groupId>
-        <artifactId>spring-security-oauth</artifactId>
-        <version>2.1.0-RC4</version>
-        <scope>compile</scope>
-        <type>zip</type>
-    </dependency>
-    <dependency>
-        <groupId>org.grails.plugins</groupId>
         <artifactId>spring-security-oauth-bitbucket</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <scope>compile</scope>
         <type>zip</type>
     </dependency>
 ```
 
+### Register application in Bitbucket
+You need to register your application in Bitbucket. Currently it is done under "Manage account" -> OAuth -> Add consumer.
+
+* Name: Name of your application. Does not need to match anything in the config, but it will be shown too your users on theit first login.
+* Callback URL: Needs to match "callback" in the config below.
+* Permissions: You need "Email" and "Read" under "Account" to be able to login users. More permissions will be needed if you plan to call other Bitbucket API:s.
+
+
 ### Config.groovy
-Register your application in Bitbucket, then add the settings to Grails Config.groovy
+When you have registered your application in Bitbucket, then add these settings to your Config.groovy:
 
 ```groovy
 oauth {
@@ -51,8 +49,16 @@ oauth {
         }
     }
 }
+
+```
+
+### Login link
+To create a login link for Bitbucket, you could use the "connect" tag from the "oauth" taglib:
+
+```xml
+<oauth:connect provider="bitbucket">Login with Bitbucket</oauth:connect>
 ```
 
 ### Further configuration
-For more configuration instructions, see https://github.com/enr/grails-spring-security-oauth
+For more configuration instructions, see http://grails.org/plugin/spring-security-oauth
 

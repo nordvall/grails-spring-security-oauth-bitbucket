@@ -1,0 +1,8 @@
+Bitbucket for Grails Spring Security OAuth plugin
+Copyright 2015 Mattias Nordvall
+
+This plugin extends the "Spring Security OAuth plugin" and is based on the various provider plugins developed by
+Mihai Cazacu, Enrico Comiti and Alexey Zhokhov. Thank you for your work!
+
+It also uses the "scribe-java-bitbucket" api definition, developed by me, and available at
+https://github.com/nordvall/scribe-java-bitbucket

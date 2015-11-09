@@ -23,7 +23,7 @@ import org.scribe.model.Token
 /**
  * Grails service to build Spring Security tokens from Bitbucket authentication
  *
- * @author Mattias Nordvall
+ * @author Mattias Nordvall <mattias@mnord.se>
  */
 class BitbucketSpringSecurityOAuthService {
     private static final String userApiEndpoint = "https://api.bitbucket.org/2.0/user"
